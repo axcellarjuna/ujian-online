@@ -46,7 +46,7 @@ class Cbt_soal_model extends CI_Model{
         if($tipe!=0){
             $tipe_sql = ' AND soal_tipe="'.$tipe.'"';
         }
-        $sql = 'SELECT '.$select.' FROM cbt_soal WHERE soal_topik_id="'.$topik.'" AND soal_difficulty="'.$kesulitan.'" '.$tipe_sql.' ORDER BY RAND() LIMIT '.$limit;
+        $sql = 'SELECT '.$select.' FROM cbt_soal WHERE soal_topik_id="'.$topik.'" AND soal_difficulty="'.$kesulitan.'" '.$tipe_sql.' ORDER BY soal_id ASC LIMIT '.$limit;
 
 
         return $this->db->query($sql);
